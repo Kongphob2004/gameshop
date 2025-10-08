@@ -1,0 +1,8 @@
+<app-navbar></app-navbar>
+
+<div class="profile-card">
+  <img [src]="user.photoURL || ''" class="profile-pic" />
+  <h3>ชื่อผู้ใช้ : {{ user.name }}</h3>
+  <p>Email : {{ user.email }}</p>
+  <button (click)="editProfile()">แก้ไขข้อมูล</button>
+</div>

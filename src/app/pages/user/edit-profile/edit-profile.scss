@@ -1,0 +1,49 @@
+.edit-card {
+  background: #1e293b;
+  color: white;
+  padding: 30px;
+  width: 360px;
+  margin: 80px auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+
+  input {
+    width: 90%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #0ea5e9;
+    border-radius: 8px;
+    background: #0b1220;
+    color: white;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .save {
+      background: #22c55e;
+    }
+    .cancel {
+      background: #ef4444;
+    }
+
+    button {
+      border: none;
+      color: white;
+      border-radius: 8px;
+      padding: 10px 15px;
+    }
+  }
+}
+
+.preview-image {
+  margin-top: 10px;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid #0ea5e9;
+}

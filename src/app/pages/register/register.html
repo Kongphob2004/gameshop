@@ -1,0 +1,15 @@
+<div class="register-container">
+  <h2>สมัครสมาชิก</h2>
+
+  <input type="text" placeholder="ชื่อผู้ใช้" [(ngModel)]="name" />
+  <input type="email" placeholder="Email" [(ngModel)]="email" />
+  <input type="password" placeholder="รหัสผ่าน" [(ngModel)]="password" />
+  <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+
+  <div *ngIf="previewUrl" class="preview">
+    <img [src]="previewUrl" alt="Preview" />
+  </div>
+
+  <button (click)="register()">สมัครสมาชิก</button>
+  <p>มีบัญชีอยู่แล้ว? <a routerLink="/login">เข้าสู่ระบบ</a></p>
+</div>

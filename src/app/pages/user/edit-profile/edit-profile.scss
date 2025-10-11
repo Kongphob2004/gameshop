@@ -1,49 +1,118 @@
-.edit-card {
-  background: #1e293b;
-  color: white;
+.container {
+  /* ใส่โค้ดนี้เพื่อเปลี่ยนสีพื้นหลัง */
+  background-color: rgba(11, 18, 32, 1);
+  /* หรือใช้ชื่อสี เช่น: background-color: lightblue; */
+
+  /* อาจจะต้องเพิ่มความสูงเพื่อให้ครอบคลุมทั้งหน้าจอ */
+  min-height: 100vh;
+  /* เพิ่ม margin และ padding ตามความเหมาะสมเพื่อจัดตำแหน่ง */
+  padding: 20px;
+  /* 1. กำหนดให้ใช้ Flexbox */
+  display: flex;
+  
+  /* 2. จัดให้อยู่กึ่งกลางในแนวนอน (Horizontal) */
+  justify-content: center; 
+  
+  /* 3. จัดให้อยู่กึ่งกลางในแนวตั้ง (Vertical) */
+  align-items: center; 
+  
+}
+/* จัดการพื้นหลังและจัดกึ่งกลางทั้งหน้า */
+.edit-container {
+  /* ทำให้เป็น Flex Container เพื่อจัดกึ่งกลาง */
+  display: flex;
+  flex-direction: column; /* จัดเรียงองค์ประกอบย่อยในแนวตั้ง */
+  align-items: center;    /* จัดให้อยู่กึ่งกลางในแนวนอน */
+  justify-content: center; /* จัดให้อยู่กึ่งกลางในแนวตั้ง */
+  
+  /* กำหนดความสูงให้เต็มหน้าจอเพื่อจัดกึ่งกลางแนวตั้ง */
+  // min-height: 100vh;
+  
+  /* สีพื้นหลังเข้มที่คุณเลือก */
+  background-color: rgba(30, 41, 59, 1);
+  
+  /* กำหนดขนาดสูงสุดของกล่องฟอร์ม */
+  max-width: 400px; /* สามารถปรับขนาดได้ตามต้องการ */
+  width: 90%; /* เพื่อให้ใช้ได้ดีบนมือถือ */
+  
+  /* สไตล์กล่องเหมือน Profile Card */
   padding: 30px;
-  width: 360px;
-  margin: 80px auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+  
+  /* สีตัวอักษรให้เป็นสีขาว/อ่อน เพื่อให้อ่านง่ายบนพื้นหลังเข้ม */
+  color: white; 
   text-align: center;
-
-  input {
-    width: 90%;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #0ea5e9;
-    border-radius: 8px;
-    background: #0b1220;
-    color: white;
-  }
-
-  .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-
-    .save {
-      background: #22c55e;
-    }
-    .cancel {
-      background: #ef4444;
-    }
-
-    button {
-      border: none;
-      color: white;
-      border-radius: 8px;
-      padding: 10px 15px;
-    }
-  }
 }
 
-.preview-image {
+/* สไตล์สำหรับหัวข้อ */
+.edit-container h2 {
+  margin-bottom: 20px;
+}
+
+/* สไตล์สำหรับ Label */
+.edit-container label {
+  display: block; /* ทำให้ Label ขึ้นบรรทัดใหม่ */
+  text-align: left;
+  width: 100%;
   margin-top: 10px;
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+/* สไตล์สำหรับช่อง Input */
+.edit-container input[type="text"],
+.edit-container input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #444; /* เปลี่ยนสีขอบให้เข้ากับ Dark Mode */
+  border-radius: 5px;
+  background-color: #333; /* สีพื้นหลัง Input ที่เข้มกว่าพื้นหลังหลักเล็กน้อย */
+  color: white;
+}
+
+/* สไตล์สำหรับรูปภาพ Preview */
+.preview-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #0ea5e9;
+  margin-top: 15px;
+  border: 3px solid white; /* เพิ่มขอบสีขาวให้สวยงาม */
+}
+
+/* จัดกลุ่มปุ่ม */
+.btn-group {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around; /* กระจายปุ่มออกจากกัน */
+}
+
+/* สไตล์ปุ่มทั่วไป */
+.btn-group button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 45%; /* ให้ปุ่มมีความกว้างเกือบครึ่ง */
+}
+
+/* สไตล์ปุ่มบันทึก */
+.btn-save {
+  background-color: #4CAF50; /* สีเขียว */
+  color: white;
+}
+.btn-save:hover {
+  background-color: #45a049;
+}
+
+/* สไตล์ปุ่มยกเลิก */
+.btn-cancel {
+  background-color: #f44336; /* สีแดง */
+  color: white;
+}
+.btn-cancel:hover {
+  background-color: #da190b;
 }

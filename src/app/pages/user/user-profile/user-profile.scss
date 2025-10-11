@@ -1,15 +1,34 @@
+.container {
+  /* ใส่โค้ดนี้เพื่อเปลี่ยนสีพื้นหลัง */
+  background-color: rgba(11, 18, 32, 1);
+  /* หรือใช้ชื่อสี เช่น: background-color: lightblue; */
+
+  /* อาจจะต้องเพิ่มความสูงเพื่อให้ครอบคลุมทั้งหน้าจอ */
+  min-height: 100vh;
+  /* เพิ่ม margin และ padding ตามความเหมาะสมเพื่อจัดตำแหน่ง */
+  padding: 20px;
+  /* 1. กำหนดให้ใช้ Flexbox */
+  display: flex;
+  
+  /* 2. จัดให้อยู่กึ่งกลางในแนวนอน (Horizontal) */
+  justify-content: center; 
+  
+  /* 3. จัดให้อยู่กึ่งกลางในแนวตั้ง (Vertical) */
+  align-items: center; 
+  
+}
+
 .profile-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #0b1220;
 }
 
 .profile-card {
   background: #1e293b;
   padding: 30px;
-  border-radius: 20px;
+  // border-radius: 20px;
   text-align: center;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   width: 380px;
@@ -25,9 +44,9 @@
 }
 
 h2,
-p {
+p,h3 {
   color: #f1f5f9;
-  margin: 5px 0;
+  margin: 20px 0;
 }
 
 .buttons {
@@ -57,4 +76,16 @@ button.logout {
 
 button:hover {
   opacity: 0.8;
+}
+
+.profile-pic {
+  /* กำหนดขนาดความกว้างและความสูงที่แน่นอน */
+  width: 120px; /* สามารถเปลี่ยนขนาดตามที่ต้องการ เช่น 100px, 150px */
+  height: 120px; /* ต้องมีค่าเท่ากับ width เพื่อให้เป็นรูปทรงสี่เหลี่ยมจัตุรัส */
+
+  /* ทำให้เป็นรูปวงกลม (ถ้าต้องการ) */
+  border-radius: 50%; 
+
+  /* สำคัญ: เพื่อให้รูปภาพดูดีเมื่อถูกตัดหรือย่อ/ขยาย */
+  object-fit: cover; 
 }

@@ -1,18 +1,21 @@
-<div class="edit-container">
-  <h2>แก้ไขข้อมูลส่วนตัว</h2>
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="edit-container">
+    <h2>แก้ไขข้อมูลส่วนตัว</h2>
 
-  <label>ชื่อผู้ใช้</label>
-  <input type="text" [(ngModel)]="name" placeholder="กรอกชื่อใหม่ของคุณ" />
+    <label>ชื่อผู้ใช้</label>
+    <input type="text" [(ngModel)]="name" placeholder="กรอกชื่อใหม่ของคุณ" />
 
-  <label>อีเมล</label>
-  <input type="email" [(ngModel)]="email" placeholder="กรอกอีเมลใหม่" />
+    <label>อีเมล</label>
+    <input type="email" [(ngModel)]="email" placeholder="กรอกอีเมลใหม่" />
 
-  <label>รูปโปรไฟล์</label>
-  <input type="file" (change)="onFileSelected($event)" accept="image/*" />
-  <img *ngIf="previewUrl" [src]="previewUrl" class="preview-image" />
+    <label>รูปโปรไฟล์</label>
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+    <img *ngIf="previewUrl" [src]="previewUrl" class="preview-image" />
 
-  <div class="btn-group">
-    <button (click)="save()" class="btn-save">บันทึก</button>
-    <button (click)="cancel()" class="btn-cancel">ยกเลิก</button>
+    <div class="btn-group">
+      <button (click)="save()" class="btn-save">บันทึก</button>
+      <button (click)="cancel()" class="btn-cancel">ยกเลิก</button>
+    </div>
   </div>
 </div>
